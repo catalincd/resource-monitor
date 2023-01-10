@@ -2,9 +2,9 @@
 TUI Resource Monitor implemented in C++ with FTXUI
 
 
-## Installation
+## Build
 
-Build with CMake:
+Build using CMake / CLang:
 
 ```bash
   mkdir build && cd build
