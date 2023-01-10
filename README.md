@@ -4,7 +4,7 @@ TUI Resource Monitor implemented in C++ with FTXUI
 
 ## Installation
 
-Install my-project with npm
+Build with CMake:
 
 ```bash
   mkdir build && cd build
