@@ -1,15 +1,19 @@
+#include <bits/stdc++.h>
+#include "cpu.h"
 #include <ftxui/screen/screen.hpp>
-#include <iostream>
- 
-int main(void) {
-  using namespace ftxui;
-  auto screen = Screen::Create(Dimension::Fixed(32), Dimension::Fixed(10));
- 
-  auto& pixel = screen.PixelAt(9,9);
-  pixel.character = U'A';
-  pixel.bold = true;
-  pixel.foreground_color = Color::Blue;
- 
-  std::cout << screen.ToString();
+
+
+cpu g_cpu;
+
+int main(void) 
+{
+  while(true)
+  {
+    system("clear");
+    g_cpu.readData();
+    g_cpu.print();
+    sleep(1);
+  }
+  
   return EXIT_SUCCESS;
 }

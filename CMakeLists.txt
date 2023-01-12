@@ -21,7 +21,10 @@ project(resource-monitor
   VERSION 1.0.0
 )
  
-add_executable(resource-monitor src/main.cpp)
+add_executable(resource-monitor 
+  src/util.cpp
+  src/cpu.cpp
+  src/main.cpp)
 target_include_directories(resource-monitor PRIVATE src)
  
 target_link_libraries(resource-monitor
