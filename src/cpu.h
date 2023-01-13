@@ -10,11 +10,7 @@ class cpu
     float prevIdle[MAX_CPUS];
     float prevTotal[MAX_CPUS];
 
-    cpu() 
-    {
-        memset(prevIdle, 0, sizeof(prevIdle));
-        memset(prevTotal, 0, sizeof(prevTotal));
-    }
+    cpu();
 
     float getUsage(std::ifstream& stream, int index);
 

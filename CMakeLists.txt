@@ -22,9 +22,12 @@ project(resource-monitor
 )
  
 add_executable(resource-monitor 
+  src/main.cpp
+  src/net.cpp
+  src/disk.cpp
+  src/mem.cpp
   src/util.cpp
-  src/cpu.cpp
-  src/main.cpp)
+  src/cpu.cpp)
 target_include_directories(resource-monitor PRIVATE src)
  
 target_link_libraries(resource-monitor

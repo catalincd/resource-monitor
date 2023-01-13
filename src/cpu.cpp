@@ -2,6 +2,11 @@
 #include "util.h"
 #include "cpu.h"
 
+cpu::cpu()
+{
+    memset(prevIdle, 0, sizeof(prevIdle));
+    memset(prevTotal, 0, sizeof(prevTotal));
+}
 
 float cpu::getUsage(std::ifstream& stream, int index)
 {
@@ -28,7 +33,7 @@ float cpu::getUsage(std::ifstream& stream, int index)
     prevTotal[index] = totalTime;
 
 
-    return ceil((1.0f - (idleDelta / float(totalDelta))) * 1000.0f) / 10.0f;
+    return ((1.0f - (idleDelta / float(totalDelta))) * 100.0f);
 }
 
 void cpu::print()
@@ -50,4 +55,6 @@ void cpu::readData()
     {
         coresUsage[numCPUs++] = readUsage;
     }
+
+    readStream.close();
 }
