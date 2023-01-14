@@ -7,7 +7,7 @@ TUI Resource Monitor implemented in C++ with FTXUI
 The executable can be found in the bin folder:
 
 ```bash
-  https://github.com/catalincd/resource-monitor
+  git clone https://github.com/catalincd/resource-monitor
   cd resource-monitor/bin
   ./resource-monitor
 ```
