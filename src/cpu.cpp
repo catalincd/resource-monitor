@@ -57,4 +57,7 @@ void cpu::readData()
     }
 
     readStream.close();
+
+    values.push_back(coresUsage[0]);
+    trimQueue();
 }

@@ -3,39 +3,24 @@
 #include "mem.h"
 #include "net.h"
 #include "disk.h"
-#include <ftxui/screen/screen.hpp>
+#include "renderer.h"
 
 
-uint64_t STRIDE = 500; //MS
-
+uint64_t STRIDE = 250; //MS
+int PRECISION = 2;
+int NET_PRECISION = 2;
 
 cpu g_cpu;
 mem g_mem;
 disk g_disk;
 net g_net;
+renderer g_renderer;
 
-//uptime
+//std::vector<graph*> graphs = 
+
 int main(void) 
 {
-  const uint64_t FRAME_TIME = STRIDE * 1000; //NANO
+    g_renderer.init();
 
-  while(true)
-  {
-    system("clear");
-    g_cpu.readData();
-    g_cpu.print();
-
-    g_mem.readData();
-    g_mem.print();
-
-    g_disk.readData();
-    g_disk.print();
-
-    g_net.readData();
-    g_net.print();
-
-    usleep(FRAME_TIME);
-  }
-  
-  return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

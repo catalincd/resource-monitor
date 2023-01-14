@@ -32,6 +32,9 @@ void mem::readData()
     swapUsage = 100.0f * (float(usedSwap) / float(totalSwap? totalSwap:1));
 
     readStream.close();
+
+    values.push_back(memUsage);
+    trimQueue();
 }
 
 void mem::print()

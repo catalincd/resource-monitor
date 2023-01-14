@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
+#include <sstream>
+#include "util.h"
 #include "net.h"
 #define BYTES_TO_MB 1024 * 1024
 
 extern uint64_t STRIDE;
+extern int NET_PRECISION;
 
 net::net()
 {
@@ -46,12 +49,15 @@ void net::readData()
     speedBytesUp = speedFactor * deltaBytesUp;
 
     readStream.close();
+
+    values.push_back(int(float(speedBytesDown) / (1024 * 1024)) * 100000 + int(float(speedBytesUp) / (1024 * 1024) * 10)) ;
+    trimQueue();
 }
 
 void net::print()
 {
-    std::cout<<"TOTAL DOWN:\t"<<(totalBytesDown / (1LL * BYTES_TO_MB))<<"MiB"<<std::endl;
-    std::cout<<"TOTAL UP:\t"<<(totalBytesUp / (1LL * BYTES_TO_MB))<<"MiB"<<std::endl;
-    std::cout<<"SPEED DOWN:\t"<<(speedBytesDown / (1LL * BYTES_TO_MB))<<"MiB/s"<<std::endl;
-    std::cout<<"SPEED UP:\t"<<(speedBytesUp / (1LL * BYTES_TO_MB))<<"MiB/s"<<std::endl;
+    std::cout<<"TOTAL DOWN:\t"<<UpstreamBytes(totalBytesDown, NET_PRECISION)<<std::endl;
+    std::cout<<"TOTAL UP:\t"<<UpstreamBytes(totalBytesUp, NET_PRECISION)<<std::endl;
+    std::cout<<"SPEED DOWN:\t"<<UpstreamBytes(speedBytesDown, NET_PRECISION)<<"/s"<<std::endl;
+    std::cout<<"SPEED UP:\t"<<UpstreamBytes(speedBytesUp, NET_PRECISION)<<"/s"<<std::endl;
 }

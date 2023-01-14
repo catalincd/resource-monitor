@@ -1,0 +1,8 @@
+FREQ:
+watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
+
+UPTIME:
+/proc/uptime
+
+
+GET IP ON NETWORK

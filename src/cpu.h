@@ -1,7 +1,8 @@
+#include "monitor.h"
 #pragma once
 #define MAX_CPUS 32
 
-class cpu
+class cpu : public monitor
 {
     public:
     int numCPUs = 0;

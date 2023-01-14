@@ -1,7 +1,9 @@
-#pragma once
+#include "monitor.h"
 #include <cstdint>
+#pragma once
 
-class net
+
+class net : public monitor
 {
 public:
     int64_t totalBytesUp;

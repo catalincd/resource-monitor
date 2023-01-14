@@ -1,9 +1,10 @@
 #pragma once
 #include "sys/types.h"
 #include "sys/sysinfo.h"
+#include "monitor.h"
 #define MAX_PARAMS 128
 
-class mem
+class mem : public monitor
 {
 public:
     int64_t params[MAX_PARAMS];

@@ -23,6 +23,8 @@ project(resource-monitor
  
 add_executable(resource-monitor 
   src/main.cpp
+  src/monitor.cpp
+  src/renderer.cpp
   src/net.cpp
   src/disk.cpp
   src/mem.cpp
